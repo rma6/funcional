@@ -10,10 +10,13 @@ chisqr :: [Float] -> [Float] -> Float
 rotate :: Int -> [a] -> [a]
 crack :: String -> String
 
---aux
+--conta ocorrências de cada letra do alfabeto
 countChar :: String -> [Int] -> [Int]
+--cria lista de inteiros inicializados para 0
 makeIntList :: Int -> [Int]
+--insere um elemento em uma posição específica
 insertAt :: Int -> a -> [a] -> [a]
+--acha o índice do menor elemento
 minIndex :: Ord a => Int -> [a] -> Int
 
 let2int c = (ord c)-97
