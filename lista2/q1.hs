@@ -36,7 +36,7 @@ treeHeight t = (treeHeight_plus_one t) - 1
 prop_2 :: Arbitrary a => Tree a -> Bool
 prop_2 t = treeNodes t <= 2^(treeHeight t + 1)-1
 
---Uma árvore binária completa, com mais de um nó, com l folhas  tem n=2l-1 nós
+--Uma árvore binária completa com l folhas  tem n=2l-1 nós
 isFull :: Tree t -> Bool
 isFull Nilt = False
 isFull (Node _ Nilt Nilt) = True
@@ -45,5 +45,5 @@ isFull (Node _ Nilt _) = False
 isFull (Node _ l r) = isFull l && isFull r
 
 prop_3 :: Arbitrary a => Tree a -> Bool
-prop_3 t = not((isFull t)) || (treeNodes t == 2*(treeLeafs t)+1)
+prop_3 t = not(isFull t) || (treeNodes t == 2*(treeLeafs t)-1)
 -- A->B === ~A||B
