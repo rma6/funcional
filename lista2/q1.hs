@@ -46,4 +46,4 @@ isFull (Node _ l r) = isFull l && isFull r
 
 prop_3 :: Arbitrary a => Tree a -> Bool
 prop_3 t = not(isFull t) || (treeNodes t == 2*(treeLeafs t)-1)
--- A->B === ~A||B
+-- A->B is equivalent to ~A||B
